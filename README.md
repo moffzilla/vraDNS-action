@@ -123,15 +123,15 @@ Let's use now the ZIP package to create an extensibility action script by import
 Log In to vRA with a user having Cloud Assembly Permissions
 Go to [ Cloud Assembly ]--> [ Extensibility ] --> [ Actions ] --> [ Create a New Action ] and associate to your Project
 
-   ![newAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/newAction.png) 
+   ![New Action](https://github.com/moffzilla/vraDNS-action/blob/master/media/newAction.png) 
 
 Instead of "Write Script", Select Import Package and import your zip file (e.g. vraDNS-actionR08.zip is a pre-staged working action) 
 
-   ![importAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/importAction.png) 
+   ![importAction](https://github.com/moffzilla/vraDNS-action/blob/master/media/importAction.png) 
 
 Define inputs required by the script ( see defaults below ) and define the Main Function as point of entry 
 
-    ![inputAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/inputAction.png) 
+    ![inputAction](https://github.com/moffzilla/vraDNS-action/blob/master/media/inputAction.png) 
 
 Please note that for actions imported from a ZIP package, the main function must also include the name of the script file that contains the entry point. For example, if your main script file is titled main.py and your entry point is handler (context, inputs), the name of the main function must be main.handler.
 
@@ -139,12 +139,12 @@ You can select your prefered FaaS Provider
 
 Save and Test your ABX Action
 
- ![saveAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/saveAction.png) 
+ ![saveAction](https://github.com/moffzilla/vraDNS-action/blob/master/media/saveAction.png) 
  
  Click on "See Details" to see your Python Script execution details
  Please note that the first time you execute it, it takes more time as it needs to upload your action to your local or remote FaaS providers
 
- ![detailsAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/detailsAction.png)
+ ![detailsAction](https://github.com/moffzilla/vraDNS-action/blob/master/media/detailsAction.png)
  
 You can change the input and FaaS provider ( please note that the MSISDN is in international format and dnsMX don't need WWW as it is an EMAIL Exchange Record)
 
