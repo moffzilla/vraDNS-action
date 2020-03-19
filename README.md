@@ -20,8 +20,8 @@ You can also use a ZIP package to create extensibility actions that contain mult
     pip 9.0.1
     dnspython==1.16.0
 
-    * Please note that the runtime of action-based extensibility in vRealize Automation Cloud Assembly is Linux-based.
-    Therefore, any Python dependencies compiled in a Windows environment might make the generated ZIP package unusable for the creation of extensibility actions. Therefore, you must use a Linux shell.
+* Please note that the runtime of action-based extensibility in vRealize Automation Cloud Assembly is Linux-based.
+Therefore, any Python dependencies compiled in a Windows environment might make the generated ZIP package unusable for the creation of extensibility actions. Therefore, you must use a Linux shell.
 
 # Install Python 3
 
@@ -35,7 +35,8 @@ check the version of Python 3 that is installed in the system by typing:
 	python3 -V
 
 Output
-	Python 3.6.5
+
+       Python 3.6.9
 
 To manage software packages for Python, let’s install pip, a tool that will install and manage programming packages like the requirements for our ABX Action
 
@@ -43,16 +44,27 @@ To manage software packages for Python, let’s install pip, a tool that will in
 
 # Create and activate a new Python environment:
 
+Create an activate a python3 development environment
+
 	root@ubuntu_server: mkdir environments
-	root@ubuntu_server: python3 -m vraDNSDev --> It creates an activates a python3 development environment
-	(vraDNSDev) root@ubuntu_server: mkdir vraDNS-action     --> This is the root folder for your action
+	root@ubuntu_server: python3 -m vraDNSDev 
+	
+Create and move to the root folder for your ABX Action
+
+	(vraDNSDev) root@ubuntu_server: mkdir vraDNS-action    
 	(vraDNSDev) root@ubuntu_server: cd ~/enviroments/vraDNSDev/vraDNS-action
 
 # Define your library requirements and install them with PIP at your action root folder
 
-	(vraDNSDev) root@ubuntu_server: vi requirements.txt --> place this file inside your action root folder 
-		dnspython==1.16.0    --> This is me only propetary library that I need and that it is not included at the standard Python
-	(vraDNSDev) root@ubuntu_server:  pip install -r requirements.txt --target=/root/enviroments/vraDNSDev/vraDNS-action   --> Install dnspython in my virtual enviroment
+Copy or Create then place the requirements.txt inside your ABX action root folder 
+For our example only the "dnspython==1.16.0" propetary library is needed, which it is not included in the standard Python or FaaS Engines
+
+	(vraDNSDev) root@ubuntu_server: vi requirements.txt 
+		dnspython==1.16.0     
+		
+Now install "dnspython==1.16.0" in your Python virtual enviroment
+
+	(vraDNSDev) root@ubuntu_server:  pip install -r requirements.txt --target=/root/enviroments/vraDNSDev/vraDNS-action   
 
 You should see the following folders:
 
@@ -68,7 +80,8 @@ It is a basic sample for translating a MSISDN number into ENUM format calling dn
 it also resolves and lists the MX records for a given domain via dnspython's dns.resolver.query()
 and finally resolve A record with prebuilt python's socket library
 
-	/////////main.py////////
+/////////main.py/////////////////
+
 	import socket
 	import dns.resolver
 	import dns.e164
@@ -98,15 +111,16 @@ and finally resolve A record with prebuilt python's socket library
 	    print('Resolving AAA Record:', addr1)
 
 	    return addr1
-	//////////////////
+	    
+//////////////////
 
-Package the main Script with the installed libraries
+Now let's package the main Script with the customized installed libraries
 Both your script and dependency elements must be stored at the root level of the ZIP package. When creating the ZIP package in a Linux environment, you might encounter a problem where the package content is not stored at the root level. If you encounter this problem, create the package by running the zip -r command in your command-line shell.
 
 	(vraDNSDev) root@ubuntu_server: cd ~/enviroments/vraDNSDev/vraDNS-action
 	(vraDNSDev) root@ubuntu_server: zip -r9 vraDNS-actionR08.zip *
 
-Let's use the ZIP package to create an extensibility action script by importing it at vRA
+Let's use now the ZIP package to create an extensibility action script by importing it at vRA
 Log In to vRA with a user having Cloud Assembly Permissions
 Create a New Action
 
