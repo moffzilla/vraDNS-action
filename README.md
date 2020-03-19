@@ -1,5 +1,5 @@
-# vraDNS-action
-Create a ZIP package for Python runtime extensibility actions including propietary Python libraries
+# Create a ZIP package for Python runtime extensibility actions including propietary Python libraries
+
 
 You can create a ZIP package that contains the Python script and dependencies used by your vRealize Automation Cloud Assembly extensibility actions.
 
