@@ -131,7 +131,7 @@ Instead of "Write Script", Select Import Package and import your zip file (e.g. 
 
 Define inputs required by the script ( see defaults below ) and define the Main Function as point of entry 
 
-    ![inputAction](https://github.com/moffzilla/vraDNS-action/blob/master/media/inputAction.png) 
+   ![inputAction](https://github.com/moffzilla/vraDNS-action/blob/master/media/inputAction.png) 
 
 Please note that for actions imported from a ZIP package, the main function must also include the name of the script file that contains the entry point. For example, if your main script file is titled main.py and your entry point is handler (context, inputs), the name of the main function must be main.handler.
 
