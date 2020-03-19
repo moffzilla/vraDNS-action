@@ -44,7 +44,8 @@ To manage software packages for Python, let’s install pip, a tool that will in
 
 # Create and activate a new Python environment:
 
-Create an activate a python3 development environment
+Create an activate a python3 development environment 
+( Please note my $HOME "/root" may be different than yours please adapt the folder locations )
 
 	root@ubuntu_server: mkdir environments
 	root@ubuntu_server: python3 -m vraDNSDev 
@@ -52,7 +53,7 @@ Create an activate a python3 development environment
 Create and move to the root folder for your ABX Action
 
 	(vraDNSDev) root@ubuntu_server: mkdir vraDNS-action    
-	(vraDNSDev) root@ubuntu_server: cd ~/enviroments/vraDNSDev/vraDNS-action
+	(vraDNSDev) root@ubuntu_server: cd /root/enviroments/vraDNSDev/vraDNS-action
 
 # Define your library requirements and install them with PIP at your action root folder
 
@@ -111,8 +112,6 @@ and finally resolve A record with prebuilt python's socket library
 	    print('Resolving AAA Record:', addr1)
 
 	    return addr1
-	    
-//////////////////
 
 Now let's package the main Script with the customized installed libraries
 Both your script and dependency elements must be stored at the root level of the ZIP package. When creating the ZIP package in a Linux environment, you might encounter a problem where the package content is not stored at the root level. If you encounter this problem, create the package by running the zip -r command in your command-line shell.
