@@ -1,4 +1,4 @@
-# Create a ZIP package for Python runtime extensibility actions including propietary Python libraries
+# Create a ZIP package for Python runtime extensibility actions including proprietary Python libraries
 
 
 You can create a ZIP package that contains the Python script and dependencies used by your vRealize Automation Cloud Assembly extensibility actions.
@@ -121,17 +121,17 @@ Both your script and dependency elements must be stored at the root level of the
 
 Let's use now the ZIP package to create an extensibility action script by importing it at vRA
 Log In to vRA with a user having Cloud Assembly Permissions
-Create a New Action
+Go to [ Cloud Assembly ]--> [ Extensibility ] --> [ Actions ] --> [ Create a New Action ] and associate to your Project
 
-    <INSERT NEW ACTION IMAGE>
+   ![newAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/newAction.png) 
 
-Select Import and pick up your zip file (e.g. vraDNS-actionR08.zip is a pre-staged working action) 
+Instead of "Write Script", Select Import Package and import your zip file (e.g. vraDNS-actionR08.zip is a pre-staged working action) 
 
-    <INSERT IMPORT IMAGE>
+   ![importAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/importAction.png) 
 
 Define inputs required by the script ( see defaults below ) and define the Main Function as point of entry 
 
-    <INSERT INPUT IMAGE>
+    ![inputAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/inputAction.png) 
 
 Please note that for actions imported from a ZIP package, the main function must also include the name of the script file that contains the entry point. For example, if your main script file is titled main.py and your entry point is handler (context, inputs), the name of the main function must be main.handler.
 
@@ -139,11 +139,14 @@ You can select your prefered FaaS Provider
 
 Save and Test your ABX Action
 
-  <INSERT INPUT IMAGE>
+ ![saveAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/saveAction.png) 
+ 
+ Click on "See Details" to see your Python Script execution details
+ Please note that the first time you execute it, it takes more time as it needs to upload your action to your local or remote FaaS providers
 
-You can change the input ( please note that the MSISDN is in international format and dnsMX don't need WWW as it is an EMAIL Exchange Record)
-
-    <INSERT INPUT IMAGE>
+ ![detailsAction](https://github.com/moffzilla/ONAP_LAB/blob/master/media/detailsAction.png)
+ 
+You can change the input and FaaS provider ( please note that the MSISDN is in international format and dnsMX don't need WWW as it is an EMAIL Exchange Record)
 
 From this point you could create an Extensibility Subscrition or expose this action at vRA's Service Broker Catalog
 
