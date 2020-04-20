@@ -65,16 +65,17 @@ For our example only the "dnspython==1.16.0" propetary library is needed, which 
 		
 Now install "dnspython==1.16.0" in your Python virtual enviroment
 
-	(vraDNSDev) root@ubuntu_server:  pip install -r requirements.txt --target=/root/enviroments/vraDNSDev/vraDNS-action   
+	(vraDNSDev) root@ubuntu_server:  pip install -r requirements.txt --target=/root/enviroments/vraDNSDev/vraDNS-action/lib   
 
-You should see the following folders:
-
-	(vraDNSDev) root@ubuntu_server:~/enviroments/vraDNSDev/vraDNS-action# ls -lrt
+You should see following folders:
+	
+	(vraDNSDev) root@ubuntu_server:~/enviroments/vraDNSDev/vraDNS-action/lib# ls -lrt
 	total 408
-	drwxr-xr-x 4 root root   4096 Mar  3 01:00 dns
-	drwxr-xr-x 2 root root   4096 Mar  3 01:00 dnspython-1.16.0.dist-info
-	-rw-r--r-- 1 root root    759 Mar  3 17:21 main.py
-	-rw-r--r-- 1 root root     18 Mar  3 17:46 requirements.txt
+	drwxr-xr-x 3 root root 4096 Apr 20 14:17 python3.6
+	drwxr-xr-x 4 root root 4096 Apr 20 14:38 dns
+	drwxr-xr-x 2 root root 4096 Apr 20 14:38 dnspython-1.16.0.dist-infofo
+
+* Note, you could install dependencies at the Python Script root level, however if you would like to re-use the bundle for vRO 8.1 and greater, it is mandatory to install dependencies at the "lib", otherwise you may get handler issues 
 
 My principal and only Python Script is "main.py"
 It is a basic sample for translating a MSISDN number into ENUM format calling dnspython's dns.e164.from_e164()
