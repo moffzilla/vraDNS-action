@@ -48,7 +48,7 @@ Create an activate a python3 development environment
 ( Please note my $HOME "/root" may be different than yours please adapt the folder locations )
 
 	root@ubuntu_server: mkdir environments
-	root@ubuntu_server: python3 -m vraDNSDev 
+	root@ubuntu_server: python3 -m venv vraDNSDev 
 	
 Create and move to the root folder for your ABX Action
 
