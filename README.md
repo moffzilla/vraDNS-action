@@ -37,6 +37,15 @@ check the version of Python 3 that is installed in the system by typing:
 Output
 
        Python 3.6.9
+       
+If you had a python 2 version still installed you may need to define the priority
+
+	sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+	sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+	
+Then make sure the version 3 is on the default when running this command
+
+	sudo update-alternatives --config python
 
 To manage software packages for Python, let’s install pip, a tool that will install and manage programming packages like the requirements for our ABX Action
 
